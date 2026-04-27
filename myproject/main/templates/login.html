@@ -1,0 +1,25 @@
+{% load static %}
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Кіру</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="register">
+
+<h1>Кіру</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input name="username" placeholder="Атың">
+    <input name="password" type="password" placeholder="Құпия сөз">
+
+    <button class="btn">Кіру</button>
+</form>
+
+<a class="btn" href="{% url 'register' %}">Тіркелу</a>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

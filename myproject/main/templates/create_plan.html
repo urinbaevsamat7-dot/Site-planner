@@ -1,0 +1,26 @@
+{% load static %}
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Күн жоспары</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="plan-page">
+
+<h1>Бүгінгі жоспар</h1>
+
+<div class="plan-list">
+{% for task in tasks %}
+<label class="task">
+    <input type="checkbox"> {{ task.text }}
+</label>
+{% empty %}
+<p>Жоспар жоқ 😢</p>
+{% endfor %}
+</div>
+
+<a class="btn center" href="{% url 'home' %}">Басты бет</a>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

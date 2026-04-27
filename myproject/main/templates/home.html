@@ -1,0 +1,31 @@
+{% load static %}
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Smart Planner</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<h1 class="title">Smart Planner</h1>
+<button onclick="toggleTheme()" class="btn">🌙 Тема</button>
+<div class="gallery">
+    <img src="{% static 'images/card2.jpg' %}">
+    <img src="{% static 'images/card3.jpg' %}">
+    <img src="{% static 'images/hero.jpg' %}">
+</div>
+
+<a class="btn center" href="{% url 'create' %}">Жоспар құру</a>
+<a class="btn center" href="{% url 'chat' %}">Чат 🤖</a>
+
+{% if request.user.is_authenticated %}
+    <p class="center">Сәлем, {{ request.user.username }}</p>
+    <a class="btn center" href="{% url 'logout' %}">Шығу</a>
+{% else %}
+    <a class="btn center" href="{% url 'login' %}">Кіру</a>
+    <a class="btn center" href="{% url 'register' %}">Тіркелу</a>
+{% endif %}
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

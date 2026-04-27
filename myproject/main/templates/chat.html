@@ -1,0 +1,28 @@
+{% load static %}
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Bot</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="plan-page">
+
+<h1>Чат бот 🤖</h1>
+
+<div class="chat">
+    <input id="msg" placeholder="Жаз...">
+    <button onclick="sendMsg()">Жіберу</button>
+    <button onclick="startVoice()">🎤</button>
+
+    <p id="res"></p>
+</div>
+
+<a class="btn center" href="{% url 'home' %}">Басты бет</a>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
